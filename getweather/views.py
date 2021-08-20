@@ -1,6 +1,9 @@
-from flask import render_template
+import requests
+from flask import render_template, request
 from getweather import app
 
-@app.route('/')
+@app.route('/', method=["GET", "POST"])
 def index():
-    return "Hello World"
+    if request.method == "POST":
+        data = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={request.form('city')}&appid=dc34755a51fe4175feca0b7eca4b7219").json()
+    return render_template('index.html')

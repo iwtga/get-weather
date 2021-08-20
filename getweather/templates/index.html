@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Get Weather{% endblock %}
+
+{% block body %}
+<div>
+    <h1>Get Weather</h1>
+    <form action="POST">
+        <input type="text" name="city" id="city" required>
+        <input type="submit" value="Add City">
+    </form>
+    {% for city in cities %}
+    {% endfor %}
+</div>
+{% endblock %}

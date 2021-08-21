@@ -7,8 +7,7 @@ import os
 
 API_KEY = os.environ.get("API_KEY")
 
-@app.route('/', method=["GET", "POST"])
-@app.route('/index', method=["GET", "POST"])
+@app.route('/', methods=["GET", "POST"])
 def index():
     if request.method == "POST":
         city = request.form('city').strip()
@@ -39,4 +38,4 @@ def index():
             "temp": city_data["main"]["temp"]
         }
         cities.append(city_obj)
-    return render_template(url_for('index'), cities=cities)
+    return render_template('index.html', cities=cities)

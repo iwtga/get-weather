@@ -1,8 +1,7 @@
 import requests
 from flask import render_template, request, url_for, flash
 from werkzeug.utils import redirect
-from getweather import app, db
-from getweather.models import City
+from getweather import app
 import os
 
 API_KEY = os.environ.get("API_KEY")

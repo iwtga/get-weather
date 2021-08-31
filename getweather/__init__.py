@@ -6,4 +6,4 @@ load_dotenv()
 
 app = Flask(__name__)
 
-from getweather import views, models
+from getweather import views
